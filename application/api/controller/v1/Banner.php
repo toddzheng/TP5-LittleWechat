@@ -14,6 +14,9 @@ use app\api\validate\IDMustBePositiveInt;
 class Banner
 {
     public  function  banner($id){
+//        var_dump(config('setting.img_prefix'));
+//        die;
+
         $validate = new IDMustBePositiveInt();
         $validate->goCheck();
         $banner = BannerModel::getBanner($id);
@@ -21,6 +24,6 @@ class Banner
             throw new BannerException();
 //            throw  new BannerException();
         }
-        return json($banner);
+        return $banner;
     }
 }

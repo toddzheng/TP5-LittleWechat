@@ -9,11 +9,16 @@
 namespace app\api\model;
 
 
-class Banner
+class Banner extends BaseModel
 {
+    protected $hidden = ['id','delete_time','update_time'];
     public  static function  getBanner($id){
 
-        $result = $id/2;
-        return $result;
+        $banner = self::with(['items','items.img'])->find($id);
+        return $banner;
+    }
+
+    public  function  items(){
+        return $this->hasMany('BannerItem','banner_id','id');
     }
 }

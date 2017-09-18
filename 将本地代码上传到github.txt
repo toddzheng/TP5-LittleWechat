@@ -1,0 +1,6 @@
+1： 切换到对应目录
+2:  git clone https://github.com/toddzheng/TP5-LittleWechat.git
+3:  将需要上传的代码复制到该文件夹下
+4： git add .
+5： git commit -m '第一次上传文件'
+6： git push

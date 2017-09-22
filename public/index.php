@@ -15,6 +15,12 @@
 define('APP_PATH', __DIR__ . '/../application/');
 //定义log路径
 define('LOG_PATH', __DIR__. '/../log/');
+define('SQL_LOG_PATH', __DIR__. '/../logSQL/');
 
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';
+\think\facade\Log::instance()->init([
+    'type' => 'File',
+    'path' => SQL_LOG_PATH,
+    'level' => ['sql']
+]);

@@ -17,7 +17,10 @@ class Token
     public  function  getToken($code){
         (new TokenGet())->gocheck();
         $userToken = new UserToken($code);
-        $openid = $userToken->get();
+        $token = $userToken->get();
+         return [
+            'token'=>$token
+        ];
 
     }
 }

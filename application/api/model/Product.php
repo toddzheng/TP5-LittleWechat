@@ -13,7 +13,11 @@ class Product extends BaseModel
 {
     protected $hidden = [
         'delete_time', 'main_img_id', 'pivot', 'from', 'category_id',
-        'create_time', 'update_time'];
+        'create_time', 'update_time','img_id'];
+    public  function  getMainImgUrlAttr($value,$data){
+
+        return $this->prefixImgUrl($value,$data);
+    }
     public static function getRencent($num){
         $products = self::limit($num)->order('id desc')->select();
         return $products;
@@ -23,8 +27,25 @@ class Product extends BaseModel
         return $products;
     }
     public  static function getProductDetail($productID){
-        $product = self::where('id','=',$productID)->find();
+        //Query
+//        $product = self::with([
+//            'imgs' => function($query){
+//                $query->with(['imgUrl'])
+//                    ->order('id', 'desc');
+//            }
+//        ])
+//            ->with(['properties'])
+//            ->find($productID);
+
+        $product = self::with(['imgs.imgUrl'])->with(['properties'])->find($productID);
+
         return $product;
 
+    }
+    public  function properties(){
+        return $this->hasMany('ProductProperty','product_id','id');
+    }
+    public function imgs(){
+        return $this->hasMany('ProductImage','product_id')->order('order','desc');
     }
 }

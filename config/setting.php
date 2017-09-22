@@ -7,5 +7,8 @@
  */
 return[
     'img_prefix' => 'www.tp51.com/images',
+    'token_salt'=>'woshsbndywmsdd',
+    //token的有效期为2个小时
+    'token_expire_in'=>7200,
 
 ];

@@ -12,15 +12,16 @@ namespace app\lib\exception;
 class UserExcpetion extends BaseException
 {
     //    http状态码
-    public  $code = 400;
+    public  $code = 404;
 //    错误信息
     public  $msg = '该用户不存在';
 //    自定义统一错误码
     public  $errorCode = 20000;
 
-    public  function __construct($msg = '该用户不存在',$errorCode = 20000)
+    public  function __construct($msg = '该用户不存在',$errorCode = 20000,$code = 404)
     {
         $this->msg = $msg;
         $this->errorCode = $errorCode;
+        $this->code = $code;
     }
 }

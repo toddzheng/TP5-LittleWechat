@@ -6,10 +6,10 @@
  * Time: 15:50
  */
 
-namespace app\api\controller\vi;
+namespace app\api\controller\v1;
 
 
-class Theme
+class Theme extends BaseController
 {
 
 }

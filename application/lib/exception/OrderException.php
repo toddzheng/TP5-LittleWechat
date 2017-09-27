@@ -18,7 +18,7 @@ class OrderException extends BaseException
 //    自定义统一错误码
     public  $errorCode = 80000;
 
-    public  function __construct($msg = '没有权限',$errorCode = 80000)
+    public  function __construct($msg = '订单不存在，请检查ID',$errorCode = 80000)
     {
         $this->msg = $msg;
         $this->errorCode = $errorCode;

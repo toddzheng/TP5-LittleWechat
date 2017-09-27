@@ -12,4 +12,7 @@ return[
         "appid=%s&secret=%s&js_code=%s&grant_type=authorization_code",
   'access_token_url' => "https://api.weixin.qq.com/cgi-bin/token?" .
         "grant_type=client_credential&appid=%s&secret=%s",
+    //与微信支付相关
+    'MCHID'=>'1900009851',
+    'NOTIFY_URL'=>'http://tp5.com/api/v1/wxNotify',
 ];

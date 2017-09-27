@@ -11,4 +11,5 @@ return[
     //token的有效期为2个小时
     'token_expire_in'=>7200,
 
+
 ];

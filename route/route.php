@@ -29,6 +29,17 @@ Route::post('api/:version/address', 'api/:version.address/createOrUpdateAddress'
 Route::get('api/:version/address/test', 'api/:version.address/test');
 Route::get('api/:version/getAddress', 'api/:version.address/getUserAddress');
 
+//Order
+Route::post('api/:version/order', 'api/:version.order/orderPlace');
+Route::get('api/:version/orderSummary', 'api/:version.order/getSummaryByUser');
+Route::get('api/:version/AllOrderSummary', 'api/:version.order/getSummary');
+Route::get('api/:version/orderDetail/:id', 'api/:version.order/getDetail');
+Route::post('api/:version/orderDetail','api/:version.order/getDetail');
+
+//微信支付回调地址
+Route::post('api/:version/wxNotify','api/:version.pay/notify');
+Route::post('api/:version/pay/pre_order','api/:version.pay/getPreOrder');
+
 return [
 
 ];
